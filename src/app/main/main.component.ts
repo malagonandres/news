@@ -11,17 +11,22 @@ import { Observable } from 'rxjs/Observable';
 export class MainComponent implements OnInit {
 
   news$: Observable<Array<INews>>;
-  newsClicked: string;
+  news: INews;
+  newsClicked: number | string;
 
   constructor(
     private _newsService: NewsService
   ) { }
 
   ngOnInit() {
+    this.news = {id: '', title: '', image: '', content: ''};
     this.news$ = this._newsService.getJsonNews();
     this.news$.subscribe(
       d => console.log('news', d)
     );
+  }
+  selectedNews( news: INews) {
+    this.news = news;
   }
 
 }

@@ -1,19 +1,27 @@
-<section>
+<section class="news-section">
 
-  <nav>
-    <div>menu</div>
-    <div>title</div>
+  <nav class="nav-stl">
+    <div class="nav-menu-btn"><i class="material-icons">menu</i></div>
+    <div class="nav-title">{{news.title | uppercase }}</div>
   </nav>
   
-  <article *ngFor="let n of news$ | async">
-    <div (click)="newsClicked = n.id">
-        <div><img [src]="n.image" [alt]="n.title"></div>
-        <div>{{n.title}}</div>
+  <article class="news-article" *ngFor="let n of news$ | async">
+    <div class="news-header" (click)="selectedNews(n)">
+        <div class="news-header-img">
+          <img [src]="n.image" [alt]="n.title">
+        </div>
+        <div class="news-header-title">
+          {{n.title | uppercase }}
+        </div>
     </div>
-    <div *ngIf="newsClicked === n.id">
-        <div ><img [src]="n.image" [alt]="n.title"></div>
-        <div>{{n.title}}</div>
-        <div>{{n.content}}</div>
+    <div class="news-body" *ngIf="news.id === n.id">
+        <div class="news-body-img">
+          <img [src]="n.image" [alt]="n.title">
+        </div>
+        <div class="news-body-txt">
+          <h2>{{n.title | uppercase }}</h2>
+          <p>{{n.content}}</p>
+        </div>
     </div>
   </article>
 
