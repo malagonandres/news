@@ -1,9 +1,20 @@
-<nav>
-  <div>menu</div>
-  <div>title</div>
-</nav>
 <section>
-  <article *ngFor="let n of news">
-    <title>{{n.title}}</title>
+
+  <nav>
+    <div>menu</div>
+    <div>title</div>
+  </nav>
+  
+  <article *ngFor="let n of news$ | async">
+    <div (click)="newsClicked = n.id">
+        <div><img [src]="n.image" [alt]="n.title"></div>
+        <div>{{n.title}}</div>
+    </div>
+    <div *ngIf="newsClicked === n.id">
+        <div ><img [src]="n.image" [alt]="n.title"></div>
+        <div>{{n.title}}</div>
+        <div>{{n.content}}</div>
+    </div>
   </article>
+
 </section>
