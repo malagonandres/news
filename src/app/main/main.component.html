@@ -1,3 +1,9 @@
-<p>
-  main works!
-</p>
+<nav>
+  <div>menu</div>
+  <div>title</div>
+</nav>
+<section>
+  <article *ngFor="let n of news">
+    <title>{{n.title}}</title>
+  </article>
+</section>

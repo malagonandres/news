@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { NewsService } from './services/news.service'
+import { NewsService } from './services/news.service';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   declarations: [PageNotFoundComponent],
   providers: [NewsService]
