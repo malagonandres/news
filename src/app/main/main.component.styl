@@ -1,18 +1,27 @@
+@import "constants"
+
 .news-section
     width 100%
 
 .nav-stl
     width 100%
     height 64px
-    background lightgray
+    background color-primary
+    color white
     display flex
- .nav-menu-btn
+.nav-menu-btn
     width 64px
     display flex
     justify-content center
     align-items center
+    background transparent
+    border none
+    cursor pointer
+    background-color color-primary
+    z-index 1000
     i
         font-size 36px
+        color white
  .nav-title 
     width 100%
     padding 0 10px
@@ -24,19 +33,23 @@
     width 100%
     max-width 900px
     margin 10px auto
-    background lightblue
     display flex
     flex-direction column
  .news-header
     width 100%
     height 64px
-    background lightgreen 
     display flex
+    background-color white
+    cursor pointer
 .news-header-img
-    width 60px
-    height 60px
+    width 64px
+    height 64px
+    display flex
+    justify-content center
+    align-items center
     img 
-        width 100%
+        width 54px
+        height 54px
         border-radius 50%
 .news-header-title
     width 100%
@@ -47,7 +60,11 @@
 
 .news-body
     width 100%
+    margin-top 10px
     display flex
+    overflow hidden
+    background-color white    
+
 .news-body-img
     width 100%
     max-width 300px    

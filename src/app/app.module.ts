@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RootModule } from './root/root.module';
 import { RootComponent } from './root/root.component';
 
@@ -8,6 +8,7 @@ import { RootComponent } from './root/root.component';
 @NgModule({
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RootModule
   ],
   bootstrap: [RootComponent]

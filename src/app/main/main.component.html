@@ -1,28 +1,39 @@
-<section class="news-section">
+<section @bounceInUp class="news-section">
 
   <nav class="nav-stl">
-    <div class="nav-menu-btn"><i class="material-icons">menu</i></div>
-    <div class="nav-title">{{news.title | uppercase }}</div>
+    <button class="nav-menu-btn" (click)="getNews()"><i class="material-icons">menu</i></button>
+    <div 
+      *ngIf="news.id" 
+      [@headerAnimation]="titleState" 
+      (@headerAnimation.done)=animationHeaderDone($event)
+      class="nav-title">
+        {{news.title | uppercase }}
+      </div>
   </nav>
   
-  <article class="news-article" *ngFor="let n of news$ | async">
-    <div class="news-header" (click)="selectedNews(n)">
-        <div class="news-header-img">
-          <img [src]="n.image" [alt]="n.title">
-        </div>
-        <div class="news-header-title">
-          {{n.title | uppercase }}
-        </div>
-    </div>
-    <div class="news-body" *ngIf="news.id === n.id">
-        <div class="news-body-img">
-          <img [src]="n.image" [alt]="n.title">
-        </div>
-        <div class="news-body-txt">
-          <h2>{{n.title | uppercase }}</h2>
-          <p>{{n.content}}</p>
-        </div>
-    </div>
-  </article>
+  <div [@bounceInRightGroup]="newsList.length">
+
+    <article class="news-article" *ngFor="let n of newsList">
+      <div class="news-header" (click)="selectedNews(n)">
+          <div class="news-header-img">
+            <img [src]="n.image" [alt]="n.title">
+          </div>
+          <div class="news-header-title">
+            {{n.title | uppercase }}
+          </div>
+      </div>
+      <div @collapseDown class="news-body" *ngIf="news.id === n.id">
+          <div class="news-body-img">
+            <img [src]="n.image" [alt]="n.title">
+          </div>
+          <div class="news-body-txt">
+            <h2>{{n.title | uppercase }}</h2>
+            <p>{{n.content}}</p>
+          </div>
+      </div>
+    </article>
+
+  </div>
+  
 
 </section>

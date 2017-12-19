@@ -1,18 +1,27 @@
+import { Component, OnInit } from '@angular/core';
+
 import { INews } from './../shared/interfaces/i-news';
 import { NewsService } from './../shared/services/news.service';
-import { Component, OnInit } from '@angular/core';
+
 import { Observable } from 'rxjs/Observable';
+import { BounceInUp, HeaderAnimation, CollapseDown , BounceInRightGroup } from '../shared/animatios/animations';
 
 @Component({
   selector: 'news-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.styl']
+  styleUrls: ['./main.component.styl'],
+  animations: [
+    BounceInUp,
+    HeaderAnimation,
+    CollapseDown,
+    BounceInRightGroup
+  ]
 })
 export class MainComponent implements OnInit {
 
-  news$: Observable<Array<INews>>;
   news: INews;
-  newsClicked: number | string;
+  newsList: INews[];
+  titleState: string;
 
   constructor(
     private _newsService: NewsService
@@ -20,13 +29,23 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     this.news = {id: '', title: '', image: '', content: ''};
-    this.news$ = this._newsService.getJsonNews();
-    this.news$.subscribe(
-      d => console.log('news', d)
-    );
+    this.newsList = [];
+    this.titleState = 'create';
   }
   selectedNews( news: INews) {
-    this.news = news;
+    this.news = this.news.id === news.id ? {id: '', title: '', image: '', content: ''} : news;
+    this.titleState = this.titleState === 'show' ? 'remove' : 'create';
   }
-
+  getNews() {
+    this._newsService.getJsonNews().subscribe(
+      d => this.newsList = d
+    );
+  }
+  animationHeaderDone(event) {
+    if (this.titleState === 'remove') {
+      this.titleState = 'create';
+    } else if (this.titleState === 'create') {
+      this.titleState = 'show';
+    }
+  }
 }
