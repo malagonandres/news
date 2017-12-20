@@ -37,7 +37,7 @@ export class MainComponent implements OnInit {
     this.titleState = this.titleState === 'show' ? 'remove' : 'create';
   }
   getNews() {
-    this._newsService.getJsonNews().subscribe(
+    this._newsService.getApiNews().subscribe(
       d => this.newsList = d
     );
   }

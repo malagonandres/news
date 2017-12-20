@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  baseUrl: ''
+  baseUrl: '../../assets/news_mock.json'
 };

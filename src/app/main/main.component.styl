@@ -1,7 +1,13 @@
 @import "constants"
 
+
+// @NEWS SECTION STL
+
 .news-section
     width 100%
+
+
+// @NEWS NAVBAR STL
 
 .nav-stl
     width 100%
@@ -24,15 +30,17 @@
         color white
  .nav-title 
     width 100%
-    padding 0 10px
+    padding 0 1em
     display flex
     align-items center
 
 
+// @NEWS CARS STL
+ 
  .news-article
     width 100%
     max-width 900px
-    margin 10px auto
+    margin 1em auto
     display flex
     flex-direction column
  .news-header
@@ -53,23 +61,34 @@
         border-radius 50%
 .news-header-title
     width 100%
-    padding 0 10px
+    padding 0 1em
     display flex
     align-items center        
-
-
 .news-body
     width 100%
-    margin-top 10px
+    margin-top 0.5em
     display flex
     overflow hidden
     background-color white    
-
 .news-body-img
-    width 100%
-    max-width 300px    
+    display flex
+    justify-content center
+    align-items center
 .news-body-txt
     width 100%
-    padding 10px
+    padding 1em
+    h2
+        padding-bottom 1em
 
+// @MEDIA QUERIES        
+
+@media only screen and (max-width: 600px) {
+    .news-body {
+        height: 100% !important
+        flex-direction column  
+    }
+    .news-body-img {
+        padding 1em    
+    }
+}
 

@@ -17,28 +17,28 @@ export const BounceInUp = trigger('bounceInUp', [
 
 export const CollapseDown = trigger('collapseDown', [
     state('void', style({
-        height: '0px'
+        height: '0'
     })),
     state('*', style({
-        height: '300px'
+        height: '100%'
     })),
     transition('void => *',
-        animate('800ms cubic-bezier(0.215, 0.610, 0.355, 1.000)',
+        animate('1000ms cubic-bezier(0.215, 0.610, 0.355, 1.000)',
             keyframes([
-                style({ opacity: 0, height: '0px',   offset: 0 }),
-                style({ opacity: 1, height: '300px', offset: .5 }),
-                style({ opacity: 1, height: '280px', offset: .8 }),
-                style({ opacity: 1, height: '300px', offset: 1 })
+                style({ opacity: 0, height: '0',   offset: 0 }),
+                style({ opacity: 1, height: '100%', offset: .6 }),
+                style({ opacity: 1, height: '90%', offset: .7 }),
+                style({ opacity: 1, height: '100%', offset: 1 })
             ])
         )
     ),
     transition('* => void',
-        animate('800ms cubic-bezier(0.215, 0.610, 0.355, 1.000)',
+        animate('600ms cubic-bezier(0.215, 0.610, 0.355, 1.000)',
             keyframes([
-                style({ opacity: 1, height: '300px', offset: 0 }),
-                style({ opacity: 1, height: '0px', offset: .5 }),
-                style({ opacity: 1, height: '20px', offset: .8 }),
-                style({ opacity: 0, height: '0px',   offset: 1 })
+                style({ opacity: 1, height: '100%', offset: 0 }),
+                style({ opacity: 1, height: '0', offset: .6 }),
+                style({ opacity: 1, height: '10%', offset: .8 }),
+                style({ opacity: 0, height: '0',   offset: 1 })
             ])
         )
     )
