@@ -6,7 +6,7 @@ PRUEBA DESARROLLADOR UI WEB
 
 Para cambiar el archivo json por la url de la api
 
-1.  Ir a la carpeta src/enviroments
+1.  Ir a la carpeta /src/enviroments
 2.  Abrir enviroment.prod.ts
 3.  Agregar a baseUrl la url de la api
 
@@ -19,6 +19,14 @@ Para cambiar el archivo json por la url de la api
 ```
 4.  Guardar
 5.  Recompilar ng build --prod
+
+En caso de no tener Angular instalado se dejo la carpeta dist en el repo, donde encontrara la web complilada. Para hacer el cambio del json por la url de la api
+
+1.  Ir a la carpeta /dist
+2.  Abrir main.bce81170e2ef34dbeb53.bundle.js
+3.  Buscar: "../../assets/news_mock.json"
+4.  Remplazar por la url: "url"
+5.  Guardar 
 
 
 ## Contruir la web en produccion
