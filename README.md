@@ -1,27 +1,37 @@
-# News
+# News web
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
+PRUEBA DESARROLLADOR UI WEB
 
-## Development server
+## Consideraciones generales
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Para cambiar el archivo json por la url de la api
 
-## Code scaffolding
+1.  Ir a src/enviroments
+2.  Abrir enviroment.prod.ts
+3.  Agregar a baseUrl la url de la api
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+    export const environment = {
+    production: true,
+    baseUrl: '< url-api >',
+    delayTime: 0
+    };
+```
+4.  Guardar
+5.  Recompilar ng build --prod
 
-## Build
+## Prerequisites
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Está web fue diseñara con el framework Angular.
 
-## Running unit tests
+* Angular CLI: 1.6.1
+* Node: 6.11.1
+* Angular: 5.1.1
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Testing
 
-## Running end-to-end tests
+No se realizo pruebas de testing, la estructura de pruebas unitarias y end to end que se encuentra en el documento es dada por angular-cli y no fue removida dado que a futuro se decae hacer esta parte.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Agradecimientos
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Muchas gracias a Rappi por la oportunidad, me divertí mucho haciendo la prueba y en especial las animaciones.

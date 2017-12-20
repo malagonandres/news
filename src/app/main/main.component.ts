@@ -4,7 +4,7 @@ import { INews } from './../shared/interfaces/i-news';
 import { NewsService } from './../shared/services/news.service';
 
 import { Observable } from 'rxjs/Observable';
-import { BounceInUp, HeaderAnimation, CollapseDown , BounceInRightGroup } from '../shared/animatios/animations';
+import { BounceInUp, HeaderAnimation, CollapseDown , BounceInRightGroup } from '../shared/animations/animations';
 
 @Component({
   selector: 'news-main',
