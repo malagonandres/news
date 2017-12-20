@@ -1,0 +1,68 @@
+@import "constants"
+
+.news-loading
+    width 100%
+    height 100vh
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
+    position absolute
+    top 0
+    left 0
+
+.loading-container
+    width 100px
+    height 100px
+
+.news-box
+    width 100px
+    height 10px
+    margin 4px
+    // background-color color-primary   
+    background-color white   
+
+@keyframes loadingAnimation {
+
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+      height: 10px
+  }
+
+  30% {
+    height: 30px
+  }
+
+  35% {
+    height: 28px
+  }
+
+  40% {
+    height: 30px
+  }
+  70% {
+    height: 30px
+  }
+  90% {
+    height: 10px
+  }
+  95% {
+    height: 12px
+  }
+  to {
+    height: 10px
+  }
+
+}
+
+.news-loading-animation
+    animation-duration 2s
+    animation-fill-mode both
+    animation-iteration-count infinite
+    animation-name loadingAnimation
+
+.news-loading-animation-delay
+    animation-delay 1s

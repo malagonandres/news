@@ -8,8 +8,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons|News+Cycle" rel="stylesheet">
+  <style>
+    
+    * {
+      box-sizing: inherit;
+      margin: 0;
+      padding: 0;
+    }
+      
+    .loading {
+      width: 100%;
+      height: 100vh;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      color: #ff6c58;
+    }
+    
+    @keyframes pulse {
+      from {
+        transform: scale3d(1, 1, 1);
+      }
+    
+      50% {
+        transform: scale3d(1.5, 1.5, 1.5);
+      }
+    
+      to {
+        transform: scale3d(1, 1, 1);
+      }
+    }
+    
+    .pulse {
+      animation-duration: 2s;
+      animation-fill-mode: both;
+      animation-iteration-count: infinite;
+      animation-name: pulse;
+    }
+     
+  </style>
 </head>
 <body>
-  <news-root></news-root>
+  <news-root>
+    <div class="loading pulse">
+      <div>LOADING...</div>
+    </div>
+  </news-root>
 </body>
 </html>

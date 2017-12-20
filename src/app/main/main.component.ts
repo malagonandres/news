@@ -22,6 +22,7 @@ export class MainComponent implements OnInit {
   news: INews;
   newsList: INews[];
   titleState: string;
+  loading: boolean;
 
   constructor(
     private _newsService: NewsService
@@ -37,9 +38,18 @@ export class MainComponent implements OnInit {
     this.titleState = this.titleState === 'show' ? 'remove' : 'create';
   }
   getNews() {
-    this._newsService.getApiNews().subscribe(
-      d => this.newsList = d
-    );
+    this.loading = true;
+    this._newsService
+      .getApiNews()
+      .subscribe(
+        d => {
+          this.newsList = d;
+          this.loading = false;
+        },
+        e => {
+          this.loading = false;
+        }
+      );
   }
   animationHeaderDone(event) {
     if (this.titleState === 'remove') {

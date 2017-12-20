@@ -13,10 +13,12 @@
   
   <div [@bounceInRightGroup]="newsList.length">
 
+    <news-loading *ngIf="loading"></news-loading>
+
     <article class="news-article" *ngFor="let n of newsList">
       <div class="news-header" (click)="selectedNews(n)">
           <div class="news-header-img">
-            <img [src]="n.image" [alt]="n.title">
+            <img [src]="n.image" alt=":(">
           </div>
           <div class="news-header-title">
             {{n.title | uppercase }}
@@ -24,7 +26,7 @@
       </div>
       <div @collapseDown class="news-body" *ngIf="news.id === n.id">
           <div class="news-body-img">
-            <img [src]="n.image" [alt]="n.title">
+            <img [src]="n.image" alt=":(">
           </div>
           <div class="news-body-txt">
             <h2>{{n.title | uppercase }}</h2>
