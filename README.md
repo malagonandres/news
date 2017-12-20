@@ -28,10 +28,26 @@ En caso de no tener Angular instalado se dejo la carpeta dist en el repo, donde 
 4.  Remplazar por la url: "url"
 5.  Guardar 
 
+## Prerequisites
+
+Está web fue diseñara con el framework Angular.
+
+* Angular CLI: 1.6.1
+* Node: 6.11.1
+* Angular: 5.1.1
+
+## Instalar Angular-cli
+
+* Abrir consola en el path donde clonó el repo
+
+```
+    npm install -g @angular/cli
+    npm install
+```
 
 ## Contruir la web en produccion
 
-* En consola
+* Abrir consola en el path donde clonó el repo
 
 ```
     ng build --prod
@@ -41,19 +57,15 @@ En caso de no tener Angular instalado se dejo la carpeta dist en el repo, donde 
 
 ## Contruir la web en desarrollo
 
-* En consola
+* Abrir consola en el path donde clonó el repo
 
 ```
     ng serve -o
 ```
 
-## Prerequisites
-
-Está web fue diseñara con el framework Angular.
-
-* Angular CLI: 1.6.1
-* Node: 6.11.1
-* Angular: 5.1.1
+## Navegadores evaluados
+* Chrome
+* Firefox
 
 ## Testing
 
